@@ -1,0 +1,79 @@
+/* Reset základního formátování */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stylování navigačního panelu */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: lightblue;
+    color: white;
+}
+
+.navbar .logo a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
+.nav-links li a:hover {
+    color: #f4a261;
+}
+
+/* Burger menu pro mobilní zařízení */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger .line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Responzivita pro mobilní zařízení */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: lightblue;
+        padding: 15px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .burger {
+        display: flex;
+    }
+}
