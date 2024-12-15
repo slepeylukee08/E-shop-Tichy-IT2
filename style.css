@@ -1,79 +1,84 @@
-/* Reset základního formátování */
-* {
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-
-/* Stylování navigačního panelu */
-body {
-    font-family: Arial, sans-serif;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: lightblue;
-    color: white;
-}
-
-.navbar .logo a {
-    font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-}
-
-.nav-links {
     list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
     text-decoration: none;
-    color: white;
-    font-size: 1em;
+    font-family: "Roboto", sans-serif;
 }
 
-.nav-links li a:hover {
-    color: #f4a261;
+:root{
+    --bg-color: #0c0c0c;
+    --text-color: #fff;
+    --main-color: #ae8957;
+    --big-font: 6.6rem;
+    --p-font: 1rem;
 }
 
-/* Burger menu pro mobilní zařízení */
-.burger {
-    display: none;
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 35px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s  ease;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
+}
+.navlist{
+    display: flex;
+}
+
+.navlist a{
+    display: inline-block;
+    margin: 0 35px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    transition: all .6s ease;
+}
+.navlist a:hover{
+    color: var(--main-color);
+}
+
+.right-content{
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn{
+    display: inline-block;
+    padding: 9px 24px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 7px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all  .6s ease;
+}
+
+.nav-btn:hover{
+    transform: translateY(-5px);
+    border: 2px solid var(--main-color);
+    color: var(--main-color);  
+}
+
+#menu-icon{
+    font-size: 42px;
+    z-index: 10001;
     cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.burger .line {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-}
-
-/* Responzivita pro mobilní zařízení */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: lightblue;
-        padding: 15px;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .burger {
-        display: flex;
-    }
+    margin-left: 25px;
+    display: none;
 }
