@@ -1,1 +1,1 @@
-# Eshop---Tich-IT2
+# E-shop-Tichy-IT2
